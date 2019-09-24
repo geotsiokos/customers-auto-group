@@ -41,7 +41,7 @@ add_action( 'user_register', 'cag_user_register', 10, 1 );
 function cag_user_register( $user_id ) {
 	if ( cag_check_dependencies() ) {
 		$user_data = get_user_data( $user_id );
-		$user_roles = $user_data->roles;write_log( $user_roles );
+		$user_roles = $user_data->roles;
 		if ( in_array( 'customer', $user_roles, true ) ) {
 			cag_add_to_group( 'Customers', $user_id );
 		}
